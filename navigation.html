@@ -1,0 +1,176 @@
+<html>
+  <head>
+    <title>Navigation Example</title>
+    <style>
+
+      /**************************************************
+      Basics
+      *************************************************/
+
+      html {
+          font-family: sans-serif; /* 1 */
+          -ms-text-size-adjust: 100%; /* 2 */
+          -webkit-text-size-adjust: 100%; /* 2 */
+      }
+
+      body {
+          margin: 0;
+          font-family: 'Roboto Condensed', sans-serif;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          color: #333333;
+          font-weight: 300;
+      }
+
+      h1{
+        float: left;
+        width: 100%;
+        min-height: 28px;
+        font-size: 24px;
+        letter-spacing: 0;
+        line-height: 28px;
+        color: #003884;
+        padding: 20px 0 10px 91px;
+        font-weight: unset;
+      }
+
+      /**************************************************
+      HORIZONTAL NAVIGATION
+      *************************************************/
+      .navigation {
+        float: left;
+        width: 100%;
+      }
+
+      .navigation ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #003884;
+        padding-left: 85px;
+      }
+
+      .navigation li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px 14px 0;
+        text-decoration: none;
+      }
+
+      /* Change the link color to #111 (black) on hover */
+      .navigation  li a:hover {
+        background-color: #34589A;
+      }
+
+      .navigation .active {
+        background-color: #34589A;
+      }
+
+      /**************************************************
+      HORIZONTAL NAVIGATION - Responsive
+      *************************************************/
+      /* Fix for Android */
+      body { 
+        -webkit-animation: bugfix infinite 1s; 
+      }
+      @-webkit-keyframes bugfix { 
+        from { padding: 0; } 
+        to { padding: 0; } 
+      }
+
+      /* default checkbox */
+      input[type=checkbox] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      .navigation  label { 
+        cursor: pointer;
+        user-select: none;
+        display: none;
+      }
+
+      @media
+      only screen and (max-width: 1140px),
+      (min-device-width: 768px) and (max-device-width: 1140px)  {
+
+        *{
+          box-sizing: border-box; 
+        }
+
+        .navigation {
+          margin-bottom: 20px;
+          margin-top: 0;
+        }
+
+        .navigation ul {
+          display:none;
+          height:100%;
+        }
+
+        .navigation label {
+          position:relative;
+          display:block;
+          width:100%;
+          min-height:2.25em;
+          padding:.45em;
+          font-size:1.1em;
+          margin:0;
+          border: .15em solid rgba(60, 60, 60, .2);
+          background-color: #34589A;
+          color: #FFF;
+        }
+
+        .navigation label:after {
+          position: absolute;
+          right: .5em;  
+          top: 0; 
+          content:"\2261";
+          font-size:1.8em;
+        }
+
+        .navigation input[type=checkbox]:checked ~ label:after {
+          /* may u can set another color for the burger */
+        }
+
+        .navigation input[type=checkbox]:checked ~ li {
+          width: 100%;
+          text-align: left;
+        }
+
+        .navigation input[type=checkbox]:checked ~ ul {
+          display: block;
+          height: auto;
+        }
+
+        .navigation input[type=checkbox]:checked ~ li:after {
+          position:absolute;
+          right:.25em;
+          content:"\203A";
+          font: bold 1.4em sans-serif;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <h1>Navigation Example - Responsive</h1><br />
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <input type="checkbox" id="menu">
+      <label for="menu" onclick>Menü</label>
+
+      <ul>
+        <li><a href="http://pfadfinder-olching.de" target="blank">Pfadfinder Olching</a></li>
+        <li><a href="http://wuerm-amper.de" target="blank">Pfadfinder Bezirk Würm-Amper</a></li>
+        <li><a href="https://www.kuppelwieser.net" target="blank">Kuppelwieser.net</a></li>
+      </ul>
+    </div>
+
+  </body>
+</html>
